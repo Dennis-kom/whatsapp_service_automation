@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="967.0" prefWidth="1517.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+  <tabs>
+    <Tab text="Untitled Tab 2">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView layoutX="21.0" layoutY="14.0" prefHeight="890.0" prefWidth="1129.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <VBox layoutX="1163.0" layoutY="18.0" prefHeight="888.0" prefWidth="337.0">
+                     <children>
+                        <Label text="Label" />
+                        <TextArea prefHeight="341.0" prefWidth="337.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="CheckBox" />
+                              <CheckBox mnemonicParsing="false" text="CheckBox" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" text="Button" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Untitled Tab 1">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="774.0" prefWidth="1017.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
