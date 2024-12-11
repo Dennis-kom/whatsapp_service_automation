@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 
 public class HelloController {
@@ -27,10 +30,20 @@ public class HelloController {
     @FXML
     private CheckBox whataapp_checkbox;
 
+    @FXML
+    private TableView table = new TableView();
+
+    LocalDataBuffer buffer = new LocalDataBuffer("path");
+
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         // TODO: connecting to all outer sources - gmail, whatsapp, google sheet
         // TODO: filling the table with content from the google sheet table
+        table.setEditable(true);
+        // TODO: load data to local data base from google sheet
+
+        Table data = buffer.getTable();
+        table.getColumns().addAll(new TableColumn("שם פרטי"), new TableColumn("מספר טלפון"));
     }
 
     @FXML
