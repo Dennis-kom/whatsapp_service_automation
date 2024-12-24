@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
 
 
 
@@ -43,7 +44,12 @@ public class HelloController {
         // TODO: load data to local data base from google sheet
 
         Table data = buffer.getTable();
-        table.getColumns().addAll(new TableColumn("שם פרטי"), new TableColumn("מספר טלפון"));
+
+        for ( headerNode: data.tableHeader){
+            ArrayList headerLoaader<TableColumn> = new ArrayList<>();
+            table.getColumns().addAll((new TableColumn<Person, String>((String) headerNode )).setCellValueFactory(););
+        }
+        table.setItems(data.getTableContent());
     }
 
     @FXML
