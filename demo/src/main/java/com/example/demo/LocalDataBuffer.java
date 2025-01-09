@@ -1,10 +1,11 @@
 package com.example.demo;
 
 public class LocalDataBuffer {
-
+    private Table dataTable;
     public LocalDataBuffer(String data_file_path){
 
         System.out.println("Starting local Json Data buffer in location:" + data_file_path);
+
         //System.out.println("Locking Mux on data file");
         //System.out.println("Openning and read data from file");
 

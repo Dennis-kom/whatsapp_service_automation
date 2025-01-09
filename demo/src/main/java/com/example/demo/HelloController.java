@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.ArrayList;
@@ -32,7 +34,7 @@ public class HelloController {
     private CheckBox whataapp_checkbox;
 
     @FXML
-    private TableView table = new TableView();
+    private TableView<Person> table = new TableView<Person>();
 
     LocalDataBuffer buffer = new LocalDataBuffer("path");
 
@@ -43,14 +45,46 @@ public class HelloController {
         table.setEditable(true);
         // TODO: load data to local data base from google sheet
 
-        Table data = buffer.getTable();
+        //Table data = buffer.getTable();
+        Table data = new Table(); // loading table content - mock
 
-        for ( headerNode: data.tableHeader){
-            ArrayList headerLoaader<TableColumn> = new ArrayList<>();
-            table.getColumns().addAll((new TableColumn<Person, String>((String) headerNode )).setCellValueFactory(););
-        }
+        TableColumn checkValCol = new TableColumn("בחירה");
+        checkValCol.setMinWidth(100);
+        checkValCol.setCellValueFactory(new PropertyValueFactory<Person, String>("check"));
+
+
+        TableColumn firstNameCol = new TableColumn("שם");
+        firstNameCol.setMinWidth(100);
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
+
+        TableColumn secondNameCol = new TableColumn("משפחה");
+        secondNameCol.setMinWidth(100);
+        secondNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("secondName"));
+
+        TableColumn phoneNumCol = new TableColumn("טלפון");
+        phoneNumCol.setMinWidth(100);
+        phoneNumCol.setCellValueFactory(new PropertyValueFactory<Person, String>("phoneNumber"));
+
+
+        TableColumn sourceCol = new TableColumn("מקור");
+        sourceCol.setMinWidth(100);
+        sourceCol.setCellValueFactory(new PropertyValueFactory<Person, String>("source"));
+
+
+        TableColumn residenceCol = new TableColumn("עיר מחגורים");
+        residenceCol.setMinWidth(100);
+        residenceCol.setCellValueFactory(new PropertyValueFactory<Person, String>("residence"));
+
         table.setItems(data.getTableContent());
+        table.getColumns().addAll(checkValCol, firstNameCol, secondNameCol, phoneNumCol, sourceCol,residenceCol );
+
+
+
+
+
+
     }
+
 
     @FXML
     void sendPressed(ActionEvent event){
